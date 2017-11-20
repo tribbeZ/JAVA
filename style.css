@@ -1,0 +1,18 @@
+.container {
+    background-color: rgb(83, 83, 121);
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+
+.text {
+    float: left;
+}
+
+.picture {
+    float: right;
+}
