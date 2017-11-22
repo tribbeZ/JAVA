@@ -1,12 +1,29 @@
-function renderMovie(movie){
-    document.getElementById("movietitle").innerText = movie.title;
-    document.getElementById("description").innerText = movie.description;
-    document.getElementById("picture").src = movie.image;
-    for (let i = 0; i < movie.actors.length; i++) {
-        let actors = movie.actors[i];
-        document.getElementById("actors").innerHTML += "<li>" + actors + "</li>";
-    }
-}
+import {movieData} from './data';
+import $ from 'jquery';
+
+
+function renderMovie(data){
+    $(".infosection h1").text(data.title);
+    $(".infosection p").text(data.review);
+    $(".poster").attr("src", data.imgUrl);
   
+    $(".infosection ul").empty();
+    for(let i=0; i<data.actors.length; i++){
+      $(".infosection ul").append("<li>" + data.actors[i] + "</li>");
+    }
+  }
+  
+  function changeStarRating(rating){
+    $(".filled").removeClass("filled");
+    for(let i=1; i<=rating; i++){
+      $("[data-rating-id=" + i + "]").addClass("filled");
+    }
+  }
+  
+  $(".stars").on("click", "span", function(e){
+    let star = $(e.target);
+    let rating = parseInt(star.attr("data-rating-id"));
+    changeStarRating(rating);
+  });
   
   renderMovie(movieData);

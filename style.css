@@ -1,18 +1,26 @@
 .container {
-    background-color: rgb(83, 83, 121);
-    width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    
+  width: 700px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #d49425;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-
-
-.text {
-    float: left;
+.poster {
+  max-width: 200px;
+  max-height: 350px;
 }
-
-.picture {
-    float: right;
+.infosection {
+  flex-grow: 1;
+  padding: 15px;
+}
+.stars span {
+  color: #b4b4b4;
+  user-select: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+.stars .filled {
+  color: black;
 }
